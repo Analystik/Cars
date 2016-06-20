@@ -1,0 +1,136 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cars.Assets">
+
+    <SolidColorBrush x:Key="MainColor" Color="#FF2DBF29" />
+    
+    <Style x:Key="PanelStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="{StaticResource ApplicationPageBackgroundThemeBrush}" />
+        <Setter Property="MaxWidth" Value="450" />
+    </Style>
+
+    
+    <Style x:Key="PageTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+    <Style x:Key="ElementTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>
+    <Style x:Key="ElementCombobox" TargetType="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="250" />
+        <Setter Property="Foreground" Value="{StaticResource MainColor }" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="ElementSliderKilometer" TargetType="Slider">
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Maximum" Value="100000" />
+        <Setter Property="StepFrequency" Value="1000" />
+        <Setter Property="MaxWidth" Value="250" />
+        <Setter Property="Margin" Value="15,15,15,0" />
+        <Setter Property="Foreground" Value="{StaticResource MainColor}" />
+    </Style>
+    <Style x:Key="ElementKilometer" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource MainColor}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="ButtomEvaluation" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource MainColor}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="MinWidth" Value="200" />
+        <Setter Property="Margin" Value="10" />
+    </Style>
+
+
+    <Style x:Key="ElementBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource MainColor}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="300" />
+        <Setter Property="Margin" Value="15,25,15,15" />
+        <Setter Property="Padding" Value="15" />
+    </Style>
+
+    <Style x:Key="ElementBorderTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource MainColor}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,15,15" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <Style x:Key="ElementResult" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource MainColor}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="ElementImagePomp" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/pomp.png" />
+        <Setter Property="Width" Value="72" />
+        <Setter Property="Height" Value="42" />
+        <Setter Property="Margin" Value="0,7,0,15" />
+    </Style>
+    <Style x:Key="ElementImagePlug" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/plug.png" />
+        <Setter Property="Width" Value="52" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="Margin" Value="0,0,0,15" />
+    </Style>
+    <Style x:Key="ThumbImageMakes" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/car.png" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="300,0,0,0" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>
+    <Style x:Key="ThumbImageModels" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/car.png" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="300,0,0,0" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>
+    <Style x:Key="ThumbImageCars" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/calendar.png" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="300,0,0,0" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>
+    <Style x:Key="ThumbImageProvince" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/pin.png" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="300,0,0,0" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>
+    <Style x:Key="ThumbImageKilo" TargetType="Image">
+        <Setter Property="Source" Value="ms-appx:///Assets/road.png" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="300,0,0,0" />
+        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True" />
+    </Style>    
+</ResourceDictionary>

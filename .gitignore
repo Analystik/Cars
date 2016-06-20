@@ -3,3 +3,6 @@
 ################################################################################
 
 /Cars.uwp/bin/x86/Debug
+/Cars.uwp/obj
+/Cars.uwp/project.lock.json
+/Cars.uwp/bin/ARM/Debug
