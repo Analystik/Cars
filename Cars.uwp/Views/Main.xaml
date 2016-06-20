@@ -23,6 +23,38 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
+        <TextBlock Style="{StaticResource ElementTitle}">Le modèle</TextBlock>
+        <ComboBox x:Name="cboModels" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Models}" SelectionChanged="cboModels_SelectionChanged" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Style="{StaticResource ElementTitle}">L'année</TextBlock>
+        <ComboBox x:Name="cboCars" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Cars}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Year4Digits}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Style="{StaticResource ElementTitle}">Votre province</TextBlock>
+        <ComboBox x:Name="cboProvince" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Provinces}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Style="{StaticResource ElementTitle}">Votre kilomètrage par année</TextBlock>
+        <Slider x:Name="sldKilometer" Style="{StaticResource ElementSliderKilometer}"></Slider>
+        <TextBlock Style="{StaticResource ElementKilometer}" Text="{Binding ElementName=sldKilometer, Path=Value}" />
+
+        <Button x:Name="btnEvaluate" Style="{StaticResource ButtomEvaluation}" Click="btnEvaluate_Click">Continuer</Button>
 
     </StackPanel>
 </Page>

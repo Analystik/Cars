@@ -2,12 +2,48 @@
     x:Class="Cars.Views.Result"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Cars.Views"
+    xmlns:local="using:Cars"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <local:Expense100KMConverter x:Key="Expense100KM" />
+        <local:Expense800KMConverter x:Key="Expense800KM" />
+    </Page.Resources>
 
-    </Grid>
+    <Page.DataContext>
+        <local:VModel />
+    </Page.DataContext>
+
+    <StackPanel Style="{StaticResource PanelStyle}" >
+
+        <Border Style="{StaticResource ElementBorder}" >
+            <StackPanel>
+                <TextBlock Style="{StaticResource ElementBorderTitle}">Propriétaire plus de 8 ans</TextBlock>
+                <TextBlock Style="{StaticResource ElementResult}" Text="{Binding FinEvaluationDescription}" />
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource ElementBorder}" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Image Style="{StaticResource ElementImagePomp}" />
+                    <TextBlock Style="{StaticResource ElementResult}" Text="{Binding FinEvaluation.GasTotalExpensesPer100km, Converter={StaticResource Expense100KM } }" />
+                    <TextBlock Style="{StaticResource ElementResult}" Text="{Binding FinEvaluation.GasTotalExpensesIn8Years, Converter={StaticResource Expense800KM} }" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Image Style="{StaticResource ElementImagePlug}" />
+                    <TextBlock Style="{StaticResource ElementResult}" Text="{Binding FinEvaluation.ElectricityTotalExpensesPer100km, Converter={StaticResource Expense100KM } }" />
+                    <TextBlock Style="{StaticResource ElementResult}" Text="{Binding FinEvaluation.ElectricityTotalExpensesIn8Years, Converter={StaticResource Expense800KM } }" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </StackPanel>
 </Page>

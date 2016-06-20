@@ -22,9 +22,22 @@ namespace Cars.Views
     /// </summary>
     public sealed partial class Result : Page
     {
+        private Models.Profile parameter;
+
         public Result()
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            this.parameter = e.Parameter as Models.Profile;
+            var vm = this.DataContext as VModel;
+
+            vm.Evaluate(this.parameter);
+        }
+
     }
 }

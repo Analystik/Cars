@@ -55,6 +55,11 @@ namespace Cars.uwp
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                rootFrame.Navigated += OnNavigated;
+
+                // Register a handler for BackRequested events and set the
+                // visibility of the Back button
+                Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -102,5 +107,29 @@ namespace Cars.uwp
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+
+
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                            rootFrame.CanGoBack ?
+                            Windows.UI.Core.AppViewBackButtonVisibility.Visible :
+                            Windows.UI.Core.AppViewBackButtonVisibility.Collapsed;
+        }
+        private void OnBackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
+
+
     }
 }
