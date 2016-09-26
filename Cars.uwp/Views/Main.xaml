@@ -14,7 +14,10 @@
     <StackPanel Style="{StaticResource PanelStyle}" >
         <TextBlock Style="{StaticResource PageTitle}">Essence contre Électricité</TextBlock>
 
-        <TextBlock Style="{StaticResource ElementTitle}">La marque de votre voiture actuel</TextBlock>
+        <RelativePanel>
+            <Image Style="{StaticResource ThumbImageMakes}" />
+            <TextBlock Style="{StaticResource ElementTitle}">La marque de votre voiture actuel</TextBlock>
+        </RelativePanel>
         <ComboBox x:Name="cboMakes" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Makes}" SelectionChanged="cboMakes_SelectionChanged" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -22,8 +25,10 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-
-        <TextBlock Style="{StaticResource ElementTitle}">Le modèle</TextBlock>
+        <RelativePanel>
+            <Image Style="{ StaticResource ThumbImageModels}" />
+            <TextBlock Style="{StaticResource ElementTitle}">Le modèle</TextBlock>
+        </RelativePanel>
         <ComboBox x:Name="cboModels" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Models}" SelectionChanged="cboModels_SelectionChanged" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -32,7 +37,11 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <TextBlock Style="{StaticResource ElementTitle}">L'année</TextBlock>
+        <RelativePanel>
+            <Image Style="{StaticResource ThumbImageCars}" />
+            <TextBlock Style="{StaticResource ElementTitle}">L'année</TextBlock>
+        </RelativePanel>
+
         <ComboBox x:Name="cboCars" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Cars}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -41,7 +50,10 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <TextBlock Style="{StaticResource ElementTitle}">Votre province</TextBlock>
+        <RelativePanel>
+            <Image Style="{ StaticResource ThumbImageProvince}" />
+            <TextBlock Style="{StaticResource ElementTitle}">Votre province</TextBlock>
+        </RelativePanel>
         <ComboBox x:Name="cboProvince" Style="{StaticResource ElementCombobox}" ItemsSource="{Binding Provinces}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -50,11 +62,16 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <TextBlock Style="{StaticResource ElementTitle}">Votre kilomètrage par année</TextBlock>
+        <RelativePanel>
+            <Image Style="{ StaticResource ThumbImageKilo}" />
+            <TextBlock Style="{StaticResource ElementTitle}">Votre kilomètrage par année</TextBlock>
+        </RelativePanel>
         <Slider x:Name="sldKilometer" Style="{StaticResource ElementSliderKilometer}"></Slider>
         <TextBlock Style="{StaticResource ElementKilometer}" Text="{Binding ElementName=sldKilometer, Path=Value}" />
 
         <Button x:Name="btnEvaluate" Style="{StaticResource ButtomEvaluation}" Click="btnEvaluate_Click">Continuer</Button>
 
     </StackPanel>
+
+
 </Page>
